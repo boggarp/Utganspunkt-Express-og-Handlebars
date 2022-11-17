@@ -1,8 +1,8 @@
 {
-  "name": "leksjon-7---bakerking-nettside",
+  "name": "Express-utgangspunkt",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./server-code/serverApp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
