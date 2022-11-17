@@ -2,9 +2,13 @@ const fs = require('fs')
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
+const fileStorage = require("./fileStorage")
 
 //Finner adresse til data-mappe
 const dataPath = path.join(__dirname, "../data")
+
+//Henter lagrede data
+const data = fileStorage.loadData();
 
 //Starter opp express, og skrur på public-mappen
 const app = express()
