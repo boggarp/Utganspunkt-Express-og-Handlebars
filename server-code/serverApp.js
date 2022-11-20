@@ -12,6 +12,9 @@ const app = express()
 const publicDirectoryPath = path.join(__dirname, "../public")
 app.use(express.static(publicDirectoryPath))
 
+//Bruker urlencoded-middleware, for å la oss få tilgang til request.body i post-forms
+app.use(express.urlencoded());
+
 //Legger til Handlebars for å få til Server Side Rendering
 const viewPath = path.join(__dirname, "../views/pages")
 const partialsPath = path.join(__dirname, "../views/partials")
@@ -26,9 +29,20 @@ function hovedSideRute(request, response){
         content: ["Content A", "Content B", "Content C"]
     })
 }
+
+//Funksjon for å håndtere et skjema
+function formHandler(request, response) {
+    console.log(request.body);
+
+    response.redirect("back");
+}
+
 //Legge inn funksjonen hovedSideRute, slik at denne 
 //vises når noen åpner "topp-domenet" vårt
 app.get('',hovedSideRute)
+
+//Når noen poster til /sendInn, kjøres funksjonen formHandler
+app.post("/sendInn", formHandler)
 
 app.listen(3000, function() { 
     console.log("Server is up! Check http://localhost:3000")
