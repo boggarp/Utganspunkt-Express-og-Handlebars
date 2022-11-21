@@ -33,7 +33,6 @@ function hovedSideRute(request, response){
 //Funksjon for å håndtere et skjema
 function formHandler(request, response) {
     console.log(request.body);
-
     response.redirect("back");
 }
 
