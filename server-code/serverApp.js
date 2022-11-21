@@ -13,7 +13,7 @@ const publicDirectoryPath = path.join(__dirname, "../public")
 app.use(express.static(publicDirectoryPath))
 
 //Bruker urlencoded-middleware, for å la oss få tilgang til request.body i post-forms
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 //Legger til Handlebars for å få til Server Side Rendering
 const viewPath = path.join(__dirname, "../views/pages")
