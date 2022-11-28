@@ -10,6 +10,12 @@ const path = require("path")
  */
 
 let lagreTabell = function (tabell, filnavn = "tabell1.json") {
+    //Sjekker at tabell er en array
+    if (tabell instanceof Array === false) {
+        console.log("Paramteret tabell til funksjonen lagreTabell må være av typen Array!")
+        console.log("Ingen data ble lagret")
+        return
+    }
     //Først gjør vi dataen om til tekst, etter Json standarden
     let filadresse = path.join(__dirname, "../data/"+filnavn)
     const dataSomJsonTekst = JSON.stringify(tabell)

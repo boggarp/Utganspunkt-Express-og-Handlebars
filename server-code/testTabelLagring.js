@@ -5,11 +5,7 @@ const tabellLagring = require("./tabellLagring.js")
 
 let tabell1 = tabellLagring.hentTabell()
 
-//tabell1.push("Simon")
-//tabell1.push("Truls")
+tabell1.push("Simon")
+tabell1.push("Truls")
 
-//tabellLagring.lagreTabell(tabell1)
-for (let index = 0; index < 1000000; index++) {
-    console.log(index + " " + tabell1[0])  
-}
-    
+tabellLagring.lagreTabell("Test")
