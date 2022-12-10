@@ -1,16 +1,5 @@
 {
-    "testVariabel" : "Hei",
-    "svarTabell": [
-        {
-            "firstname": "Børge",
-            "lastname": "Garpestad"
-        },
-        {
-            "firstname": "Hans",
-            "lastname": "Hansen"
-        }
-
-    ]
+    "tekstvariabel" : "Hei",
+    "tabell1": []
 }
-
 
