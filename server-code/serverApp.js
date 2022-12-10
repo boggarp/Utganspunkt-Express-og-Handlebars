@@ -22,6 +22,7 @@ app.set("view engine", hbs)
 app.set('views',viewPath)
 hbs.registerPartials(partialsPath)
 
+
 //Funksjon (handler) for å vise fremsiden
 function hovedSideRute(request, response){
     response.render("index.hbs", {
@@ -29,23 +30,18 @@ function hovedSideRute(request, response){
         content: ["Content A", "Content B", "Content C"]
     })
 }
+//Legge inn funksjonen hovedSideRute, slik at denne 
+//vises når noen åpner "topp-domenet" vårt
+app.get('',hovedSideRute)
+
 
 //Funksjon for å håndtere et skjema
 function formHandler(request, response) {
     console.log(request.body);
     response.redirect("back");
 }
-
-//Legge inn funksjonen hovedSideRute, slik at denne 
-//vises når noen åpner "topp-domenet" vårt
-app.get('',hovedSideRute)
-
 //Når noen poster til /sendInn, kjøres funksjonen formHandler
 app.post("/sendInn", formHandler)
-
-app.listen(3000, function() { 
-    console.log("Server is up! Check http://localhost:3000")
-})
 
 
 //Funksjon (handler) for å vise about-siden
@@ -57,13 +53,8 @@ function aboutHandler(request, response){
 app.get('/about',aboutHandler)
 
 
-//Funksjon (handler) for å vise about-siden
-function aboutHandler(request, response){
-    response.render("about.hbs")
-}
-//Lager funksjonen som skal kjøres og knytter den 
-//opp mot adressen /about
-app.get('/about',(request,response) => {
-    response.render("about.hbs")
-})
 
+
+app.listen(3000, function() { 
+    console.log("Server is up! Check http://localhost:3000")
+})
