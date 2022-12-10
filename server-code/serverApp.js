@@ -48,3 +48,22 @@ app.listen(3000, function() {
 })
 
 
+//Funksjon (handler) for å vise about-siden
+function aboutHandler(request, response){
+    response.render("about.hbs")
+}
+//Legge inn funksjonen aboutHandler, slik at denne 
+//kjøres når noen åpner adressen /about
+app.get('/about',aboutHandler)
+
+
+//Funksjon (handler) for å vise about-siden
+function aboutHandler(request, response){
+    response.render("about.hbs")
+}
+//Lager funksjonen som skal kjøres og knytter den 
+//opp mot adressen /about
+app.get('/about',(request,response) => {
+    response.render("about.hbs")
+})
+

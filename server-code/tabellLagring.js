@@ -3,7 +3,7 @@ const path = require("path")
 
 /**
  * Funksjon for å lagra en tabell til fil. Data vil lagres i JSON-formatet
- * Viss filen spesifisert ikke eksisterer blir filen lagrt.
+ * Viss filen spesifisert ikke eksisterer blir filen laget.
  * @param {*} tabell Tabellen som skal lagres.
  * @param {*} filnavn Navn på fil som skal brukes. (Filen blir liggende i data mappen) 
  * Som standard blir den lagret i filen tabell1.json
